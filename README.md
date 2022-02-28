@@ -29,17 +29,18 @@ penguins_scatter
 
 <img src="README_files/figure-gfm/scatter-function-1.png" width="50%" />
 
-And you want to write tests to make sure that as you further develope
-and refactor your code, you do not break it. You can use the `vdiffr`
-visual regression testing package to do this. First, you need to
-abstract the function to an R script that lives in `R`. For this demo,
-we created a file called `R/pretty_scatter.R` that houses the
-`pretty_scatter` function shown above.
+And you want to write tests to make sure that as you further develop and
+refactor your code, you do not break it. You can use the `vdiffr` visual
+regression testing package to do this. First, you need to abstract the
+function to an R script that lives in `R`. For this demo, we created a
+file called `R/pretty_scatter.R` that houses the `pretty_scatter`
+function shown above.
 
-Then you need to setup a `tests` directory and tests file in which to
-house your tests that works with the testthat framework (we recommend
-using `usethis::use_testthat()` and `usethis::use_test("FUNCTION_NAME")`
-to do this).
+Then you need to setup a `tests` directory and test file in which to
+house your tests that works with the
+[`testthat`](https://testthat.r-lib.org/) framework (we recommend using
+`usethis::use_testthat()` and `usethis::use_test("FUNCTION_NAME")` to do
+this).
 
 Finally, add an expectation with `vdiffr::expect_doppelganger` to your
 `test_that` statement:
